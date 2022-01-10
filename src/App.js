@@ -99,19 +99,33 @@ function App() {
 
       <div
         style={{
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundImage: `url(/time-timer/images/transperant-clock.png)`,
           height: 0,
           paddingBottom: '100%',
-          background: `conic-gradient(white ${
-            (currentSeconds / 60 / targetMinutes) * 360 || 0
-          }deg, ${color} ${
-            (currentSeconds / 60 / targetMinutes) * 360 || 0
-          }deg)`,
-          borderRadius: '50%',
-          border: '1px solid black',
+          position: 'relative',
         }}
-      ></div>
+      >
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            opacity: 0.8,
+            background: `conic-gradient(white ${
+              (currentSeconds / 60 / targetMinutes) * 360 || 0
+            }deg, ${color} ${
+              (currentSeconds / 60 / targetMinutes) * 360 || 0
+            }deg)`,
+            borderRadius: '50%',
+            border: '1px solid black',
+          }}
+        ></div>
+      </div>
     </div>
   );
 }
-
 export default App;
