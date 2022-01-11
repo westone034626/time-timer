@@ -83,10 +83,20 @@ function App() {
           목표 시간(최대 60분):
         </p>
         <input
+          list="tickmarks"
           style={{ gridRow: '1 / 2', gridColumn: '2 / 4' }}
           onChange={onChange}
           value={targetMinutes}
+          type="range"
+          min={0}
+          max={60}
+          step={5}
         ></input>
+        <datalist id="tickmarks">
+          {[0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60].map((o) => (
+            <option key={o} value={parseInt(o, 10)}></option>
+          ))}
+        </datalist>
 
         <p style={{ gridRow: '2 / 3', gridColumn: '1 / 2' }}> 색 선택:</p>
         <input
